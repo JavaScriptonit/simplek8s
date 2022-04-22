@@ -1,0 +1,12 @@
+apiVersion: v1 # have access to set of different object types
+kind: Service # setting up network in a Kubernetes Cluster
+metadata: 
+  name: client-node-port
+spec:
+  type: NodePort # Subtype of an Object Type "Service". Exposes a container to the outside world
+  ports: # direct all the traffic to this ports
+    - port: 3050 # port for any other object/pod to reach multi-client Pod
+      targetPort: 3000 # port inside of Pod that we want to open traffic to
+      nodePort: 31515 # port inside browser http://localhost:31515/
+  selector: # NodePort is a random number 30000-32767, not for production env
+    component: web # look for any other pod or ruuning object that has THIS key value pair 

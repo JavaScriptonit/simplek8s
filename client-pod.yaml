@@ -1,0 +1,12 @@
+apiVersion: v1 # depends on a kind of object we want to make
+kind: Pod # runs a container (1 or 1+ familiar)
+metadata: 
+  name: client-pod
+  labels:
+    component: web
+spec:
+  containers: # at least 1 container to run in Pod
+  - name: client # name of container
+    image: javascriptonit/multi-worker # name of image in docker hub
+    ports:
+      - containerPort: 9999 # port 3000 to outside world - default.conf server {listen: 3000;}
