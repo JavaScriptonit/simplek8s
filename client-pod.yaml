@@ -7,6 +7,6 @@ metadata:
 spec:
   containers: # at least 1 container to run in Pod
   - name: client # name of container
-    image: javascriptonit/multi-worker # name of image in docker hub
+    image: javascriptonit/multi-client # name of image in docker hub
     ports:
       - containerPort: 9999 # port 3000 to outside world - default.conf server {listen: 3000;}
